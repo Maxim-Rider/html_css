@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Drag & Drop</title>
+	<style>
+		#source {
+			background-color: yellow;
+			width: 100px;
+			height: 100px;
+			cursor: move;
+			color: black;
+		}
+
+		#target {
+			background-color: blue;
+			width: 150px;
+			height: 150px;
+			padding: 5px;
+			margin-bottom: 5px;
+			color: white; 
+		}
+	</style>
+
+	<script>
+		// dragstart - вызывается в самом начале переноса перетаскиваемого элеметна.
+		// dragend - вызывается в конце события перетаскивания - как умпешного, так и отменённого.
+		// dragenter - происходит в момент когда перетаскиваемый объект попадает в область целевого элемента.
+		// dragleave - происходит, когда перетаскиваемый элемент покидает область целевого элемента.
+		// dragover - происходит, когда перетаскиваемый элемент находиться над целевым элементом.
+		// drop - вызывается, когда событие перетаскивания завершается отпусканием элемента над целевым элементом.
+
+		window.onload = function () {
+			var source = document.getElementById("source");
+
+			// начало операции drag
+			source.addEventListener('dragstart', function (evt) {
+				this.style.border = "3px dotted #000"; // маняет стиль в начале операции drag & drop
+
+				// Свойство effectAllowed управляет визуальным эффектом (чаще всего это вид указателя мыши), который браузер создаёт в ответ
+				// на тип происходящего события перетаскивания (перемещение, копирование, и т.п.)
+				// http://msdn.microsoft.com/en-us/Library/ie/ms533743%28v=vs.85%29.aspx
+				evt.dataTransfer.effectAllowed = "move";
+
+				// Метод setData(...) сообщает механизму перетаскивания в браузере, какие данные из перетаскиваемого объекта должен "поймать"
+				// целевой элемент, также называемый зоной приёма. Здесь мы указываем, что передаваемые данные это id элемента
+				evt.dataTransfer.setData("Text", this.id);
+			}, false);
+
+			// конец операции drag 
+			source.addEventListener("fragend", function (evt) {
+				this.style.border = ""; // удаляем стили добавленные в начале операции drag & drop
+			}, false);
+
+			var target = document.getElementById("target");
+
+			// перетаскиываемый объект попадает в область целевого элемента
+			target.addEventListener("dragenter", function (evt) {
+				this.style.border = "3px solid red";
+			}, false);
+
+			// перетаскиваемый элемент покидает область целевого элемента
+			target.addEventListener("dragleave", function (evt) {
+				this.style.border = "";
+			}, false);
+
+			target.addEventListener("dragover", function (evt) {
+				// отменяем стандартный обработчик события dragover
+				// реализация данного обработчика по умолчанию не позволяет перетаскивать данные на целевой элемент, так как большая часть веб страницу не может принимать данные.
+				// Для того, что бы элемент мог принять перетаскиваемые данные необходимо отменить стандартный обработчик.
+				if (evt.preventDefault) evt.preventDefault();
+				return false;
+			}, false);
+
+			// перетаскиваемый элемент опущен над целевым элементом
+			target.addEventListener("drop", function (evt) {
+				// прекращаем дальнейшее распространение события по дереву DOM и отменяем возможный стандартный обработчик установленный браузером.
+				if (evt.preventDefault) evt.preventDefault();
+				if (evt.stopPropagation) evt.stopPropagation();
+				this.style.border = "";
+				var id = evt.dataTransfer.getData("Text"); // получаем информации которая передавалась через операцию drag & drop
+				var elem = document.getElementDyId(id);
+				// добавляем жлемент в целевой элемент. Так как в DOM не может быть два идентичнхы элемента - элемент удаляется со своей старой позиции.
+				this.appendChild(elem);
+
+				return false;
+			}, false);
+		}
+	</script>
+
+</head>
+<body>
+	<!-- дДля того чтобы активировать возможность переносить данные небоходимо установить атрибут draggable и создать обработчик на событие dragstart -->
+	<div id="source" draggable="true"> Этот элемент</div>
+	<div id="target">Перенести в эту область</div>
+</body>
+</html>
