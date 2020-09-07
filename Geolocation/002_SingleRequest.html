@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<title>Geolocation API</title>
 </head>
@@ -16,10 +16,19 @@
 		</tr>
 		<tr>
 			<td>
-				долготоа
+				долгота
 			</td>
 			<td>
 				<p id="longitude">
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				точность (м)
+			</td>
+			<td>
+				<p id="accuracy">
 				</p>
 			</td>
 		</tr>
@@ -29,15 +38,6 @@
 			</td>
 			<td>
 				<p id="altitude">
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				точность (высота)
-			</td>
-			<td>
-				<p id="altitudeAccuracy">
 				</p>
 			</td>
 		</tr>
@@ -69,7 +69,7 @@
 		navigator.geolocation.getCurrentPosition(updateLocation, handleError);
 
 		function updateLocation(position) {
-			var $ = dunction (selector) {
+			var $ = function (selector) {
 				return document.getElementById(selector);
 			}
 
@@ -82,7 +82,7 @@
 			$("speed").innerHTML = position.coords.speed;
 		}
 
-		function handle(error) {
+		function handleError(error) {
 			switch (error.code) {
 				case 0:
 					updateStatus("При попытке определить местоположение возникла ошибка: " + error.message);
@@ -94,7 +94,7 @@
 					updateStatus("Браузеру не удалось определить местоположение: " + error.message);
 					break;
 				case 3:
-					updateStatus("Истекло доступное время ожидания.")
+					updateStatus("Истекло доступное время ожидания.");
 					break;
 			}
 		}
