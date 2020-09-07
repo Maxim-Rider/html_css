@@ -6,7 +6,7 @@
 	<script>
 		function draw() {
 			// проверка поддержки элемент canvas в браузере 
-			if (!Modernizr.canvas) return;
+			// if (!Modernizr.canvas) return;
 
 			// поулчение элемента и его графического контекста.
 			var canvas = document.getElementById("canvas");
@@ -14,7 +14,7 @@
 
 			// создание пути
 			context.beginPath();
-			context.moveTo(100,200);
+			context.moveTo(100,100);
 			context.lineTo(200,200);
 
 			// черчение линии на холсте.
