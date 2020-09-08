@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>drawImage()</title>
+	<script src="Modernizr-2.0.6.js"></script>
+	<script>
+		function draw() {
+			if (!Modernizr.canvas) return;
+
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+
+			var logo = new Image();
+
+			logo.onload = function () {
+				context.drawImage(logo, 0, 0);
+			}
+			logo.src = "Logo.png";
+		}
+
+		if (window.addEventListener)
+			window.addEventListener("load", draw, true);
+	</script>
+</head>
+<body>
+	<canvas id="canvas" height="660" width="900" style="border: solid 1px black;">
+		Ваш браузер не поддерживает элемент <b>Canvas</b>
+	</canvas>
+</body>
+</html>
