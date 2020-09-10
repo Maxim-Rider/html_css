@@ -169,6 +169,14 @@ game.ball = {
         this.dy = -this.velocity;
         this.dx = game.random(-this.velocity, this.velocity);
     },
+    animate() {
+    	setInterval(() => {
+    		++this.frame;
+    		if (this.frame > 3) {
+    			this.frame = 0;
+    		}
+    	}, 100);
+    },
     move() {
         if (this.dy) {
             this.y += this.dy;
