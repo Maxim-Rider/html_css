@@ -66,6 +66,7 @@ game.ball = {
             this.dy = this.velocity;
             game.sounds.bump.play();
         } else if (ballBottom > worldBottom) {
+            this.sounds.loss.play();
             game.end("Loss");
         }
     },

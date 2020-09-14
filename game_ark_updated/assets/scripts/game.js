@@ -23,6 +23,7 @@ let game = {
     },
     sounds: {
         bump: null,
+        loss: null,
     },
     initCanvasSize() {
         let realWidth = window.innerWidth * window.devicePixelRatio;
@@ -164,10 +165,11 @@ let game = {
         });
     },
     end(message) {
-        this.running = false;
+        this.running = true;
+        this.sounds.loss.play();
         alert(message);
         window.location.reload();
-    },
+    },   
     random(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
