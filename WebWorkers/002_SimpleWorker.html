@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Web Worker</title>
+	<script type="text/javascript">
+		// создание потока (WebWorker)
+		var worker = new Worker("task.js")
+
+		// Припязка обработчика на событие message, которое будет возникать в случае если поток присылает данные
+		worker.addEventListener("message", function (e) {
+			document.getElementById("output").innerHTML += "Otvet potoka: " + e.data;
+		}, true);
+
+		// Отправка данных потоку
+		// Когда воркер получит сообщение в нм произойдёт message
+		worker.postMessage("Hello world");
+	</script>
+</head>
+<body>
+	<div id="output"></div>
+</body>
+</html>

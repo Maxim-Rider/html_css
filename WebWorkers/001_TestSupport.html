@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Web Workers Support Testing</title>
+	<script type="text/javascript">
+		window.addEventListener("load", function () {
+			if (typeof Worker !== "undefined") {
+				document.getElementById("support").innerHTML = "Browser podderzivaet HTML 5 Web Workers";
+			}
+			else {
+				document.getElementById("support").innerHTML = "Browser NE podderzivaet HTML 5 Web Workers";
+			}
+		}, false);
+	</script>
+</head>
+<body>
+	<div id="support">
+	</div>
+</body>
+</html>
