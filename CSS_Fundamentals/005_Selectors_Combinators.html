@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SCC3 Combinators</title>
+	<style>
+		/*
+		Элементы имеют общено родителя в документе и элемент p находится за элементои h2 */
+		h2 ~ p {
+			margin: 10px;
+			border: 1px solid green;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h2>Hello</h2>
+
+		<ul>
+			<li>Item1</li>
+			<li>Item2</li>
+			<li>Item3</li>
+		</ul>
+		<p>world</p> <!-- Данный элемент будет выбран селектором -->
+	</div>
+	<div>
+		<h2>Hello</h2>
+		<a href="#">Link</a>
+		<p>world</p> <!-- Данный элемент будет выбран селектором -->
+	</div>
+	<p>HELLO WORLD</p>
+	<h2>hello world</h2>
+	<a href="http://www.w3.org/TR/selectors">SCC3 Selectrs</a>
+
+</body>
+</html>
