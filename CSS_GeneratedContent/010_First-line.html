@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>first-line</title>
+	<style>
+		/* Псевдоэлемент ::first-line задаёт стиль первой строки форматированного текста.
+		Длина этой строки зависит от многих факторов, таких как используемый шрифт, размер окна браузера, ширина блока, языка и т.д.
+		В правилах стиля допустимо использовать только свойство, относящиеся к шрифту, изменению цвета текста и фона. */
+
+		p::first-line {
+			color: red;
+			font-style: italic;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		Lorem ipsum <br /> dolor sit amet consectetur adipisicing elit. Provident deleniti officia, vitae reiciendis at quae laboriosam culpa eligendi consectetur aliquid corrupti saepe quas labore, non facere hic soluta accusamus praesentium.
+		Explicabo iure quasi, beatae suscipit neque a ipsum, rerum dolorum, enim sapiente in, quod fuga odit nam doloribus? Laborum tempora illum non consectetur, nihil. Numquam alias, quasi optio iste eaque?
+	</p>
+</body>
+</html>
