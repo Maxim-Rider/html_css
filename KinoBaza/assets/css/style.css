@@ -15,7 +15,7 @@ p {
 }
 
 input[type="text"], input[type="password"], input[type="search"] {
-	color: #5d5d5d;
+	color: #e0dddd;
 	width: 60%;
 	padding: 8px;
 }
@@ -23,7 +23,7 @@ input[type="text"], input[type="password"], input[type="search"] {
 input, textarea {
 	outline: none;
 	border: none;
-	border: solid 1px #f2f2f2;
+	border: solid 1px #e0dddd;
 }
 
 h1, h2 {
@@ -50,8 +50,9 @@ ul {
 ul li {
 	margin: 0 0 6px 0;
 	padding: 0 0 4px 5px;
-	line-height: 1.5em
+	line-height: 1.5em;
 }
+
 
 .header {
 	background-color: darkslateblue;
@@ -129,7 +130,7 @@ hr {
 
 .site_content {
 	width: 880px;
-	overflow:hidden;
+	overflow: hidden;
 	margin: 20px auto 0 auto;
 	background-color: white;
 }
@@ -144,7 +145,7 @@ hr {
 	width: 222px;
 	padding: 5%;
 	margin: 0 0 16px 0;
-	border: solid 1px #f2f2f2;
+	border: solid 1px #e0dddd;
 	border-radius: 5px;
 	background-color: #f9f9f9;
 }
@@ -152,7 +153,7 @@ hr {
 .btn {
 	padding: 8px;
 	background-color: white;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .sidebar h2 {
@@ -204,6 +205,7 @@ hr {
 }
 
 /* Страница просмотра фильма */
+
 .info_film_page {
 	margin-top: 2%;
 	margin-bottom: 4%;
@@ -223,7 +225,7 @@ hr {
 	margin-bottom: 15%;
 }
 
-.descriptions_film img{
+.descriptions_film img {
 	float: left;
 	margin-right: 2%;
 	border-radius: 5px;
@@ -258,7 +260,7 @@ hr {
 	margin-bottom: 2%;
 }
 
-.send input[type="text"]{
+.send input[type="text"] {
 	width: 98%;
 }
 
@@ -267,7 +269,7 @@ hr {
 	height: 200px;
 }
 
-.send input[type="submt"]{
+.send input[type="submit"] {
 	background-color: #7268AD;
 	padding: 3%;
 	color: white;
@@ -295,6 +297,17 @@ hr {
 	border-radius: 5px;
 	border: solid 5px #dad7d5;
 	width: 25%;
+}
+
+.button {
+	background-color: #7268ad;
+	padding: 2%;
+	color: white;
+	border-radius: 5px;
+	float: right;
+	margin-top: 5%;
+	clear: both;
+	font-size: 0.8em;
 }
 
 .button a {
@@ -326,7 +339,7 @@ td img {
 
 .footer {
 	width: 100%;
-	height: 100px;
+	height: 100%;
 	padding: 28px 0 5px 0;
 	text-align: center;
 	background-color: darkslateblue;
