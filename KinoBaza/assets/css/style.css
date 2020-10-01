@@ -14,6 +14,11 @@ p {
 	line-height: 1.7em;
 }
 
+article {
+	padding: 0 0 20px 0;
+
+}
+
 input[type="text"], input[type="password"], input[type="search"] {
 	color: #e0dddd;
 	width: 60%;
@@ -54,7 +59,7 @@ ul li {
 }
 
 
-.header {
+header {
 	background-color: darkslateblue;
 	height: 177px;
 	font-size: 0.8em;
@@ -63,7 +68,7 @@ ul li {
 	min-width: 900px;
 }
 
-.main, .logo, .menubar, .site_content, .footer {
+main, .logo, .menubar, .site_content, footer {
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -179,14 +184,14 @@ hr {
 	float: right;
 }
 
-.content {
+content {
 	text-align: left;
 	width: 620px;
 	padding: 0 0 0 5px;
 	float: left;
 }
 
-.content a {
+content a {
 	text-decoration: none;
 }
 
@@ -299,7 +304,7 @@ hr {
 	width: 25%;
 }
 
-.button {
+button {
 	background-color: #7268ad;
 	padding: 2%;
 	color: white;
@@ -310,7 +315,7 @@ hr {
 	font-size: 0.8em;
 }
 
-.button a {
+button a {
 	color: white;
 }
 
@@ -337,7 +342,7 @@ td img {
 	font-weight: bold;
 }
 
-.footer {
+footer {
 	width: 100%;
 	height: 100%;
 	padding: 28px 0 5px 0;
@@ -349,16 +354,16 @@ td img {
 	min-width: 900px;
 }
 
-.footer a {
+footer a {
 	color: #a8aa94;
 	text-decoration: none;
 }
 
-.footer a:hover {
+footer a:hover {
 	color: #fff;
 	text-decoration: none;
 }
 
-.footer p {
+footer p {
 	padding: 0 0 10px 0;
 }
